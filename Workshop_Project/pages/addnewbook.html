@@ -1,0 +1,68 @@
+<!--Link for external styleshett-->
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/phone-default.css">
+</head>
+		<!--Start of Form-->
+		<form class="container form-horizontal" name="myForm" ng-submit="addNew(newBook,availableOn)">
+			<div class="border">
+				<h2>Add New Book </h2>
+				<!--Div for Book ISBN-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label">ISBN:<sup>*</sup></label> 
+					<div class="col-sm-10">
+						<input class="form-control" ng-model="newBook.isbn" type="number" name="isbn" placeholder="ISBN" required/>
+						<span ng-show="myForm.isbn.$invalid && myForm.isbn.$dirty">
+						Invalid Number
+						</span>
+					</div>	
+				</div>	
+		
+				<!--Div for Book Title-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Title:<sup>*</sup></label> 
+					<div class="col-sm-10">
+						<input  class="form-control" ng-model="newBook.title" type="text" name="title" placeholder="Title" required/>
+						<span ng-show="myForm.title.$invalid && myForm.title.$dirty">
+						Invalid
+						</span>
+					</div>	
+				</div>
+				
+				<!--Div for Book Author-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Author:<sup>*</sup></label> 
+					<div class="col-sm-10">
+						<input  class="form-control" ng-model="newBook.author" type="text" name="author" placeholder="Author" required/>
+						<span ng-show="myForm.author.$invalid && myForm.author.$dirty">
+						Invalid
+						</span>
+					</div>	
+				</div>	
+				
+				<!--Div for Book Price-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Price:<sup>*</sup></label> 
+					<div class="col-sm-10">
+						<input  class="form-control" ng-model="newBook.price" type="number" name="price" placeholder="Price" required/>
+						<span ng-show="myForm.price.$invalid && myForm.price.$dirty">
+						Invalid
+						</span>
+					</div>	
+				</div>		
+				
+				<!--Div for Book Availability-->
+				<div class="form-group">
+					<label  class="col-sm-2 control-label">Available On:</label> 
+						<div class="checkbox col-sm-1"><label class="check"><input type="checkbox" name="Amazon" value="Amazon" ng-click="toggleSelection('Amazon')"/>Amazon</label>
+						<label class="check"><input type="checkbox" value="eBay" ng-click="toggleSelection('eBay')"/>eBay</label>
+						<label class="check"><input type="checkbox" ng-click="toggleSelection('Flipkart')" value="Flipkart"/>Flipkart</label>
+						<label class="check"><input type="checkbox" value="Google" ng-click="toggleSelection('Google')"/>
+						Google</label></div>
+				</div>
+		
+				<!--For Save button-->
+				<button class="btn btn-primary btnForSave text-center col-xs-12 col-sm-1" type="submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+				<button class="btn btn-primary btnForReset text-center col-xs-12 col-sm-1" ng-click="reset()"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>Reset</button>
+		</div>
+	</form>	

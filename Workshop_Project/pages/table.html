@@ -1,0 +1,27 @@
+<!--Section to display table-->
+<section class="container">
+	
+	<!--Table to display data-->
+		<div class="table-responsive">
+			<table class=" container table table-bordered">
+				<thead>
+				<tr>
+					<th>ISBN</th>
+					<th>Title</th>
+					<th>Author</th>
+				</tr>
+				</thead>
+			
+				<tbody>
+				<!--ng-repeat directive to display data in every row-->
+				<tr ng-repeat="e in emp">
+					<td><a href="#editBook/{{e.isbn}}">{{e.isbn}}</a></td>
+					<td>{{e.title}}</td>
+					<td><a href="#editAuthor/{{e.author}}">{{e.author}}</a></td>
+				</tr>
+				</tbody>
+			</table>
+			
+			
+		</div>
+</section>

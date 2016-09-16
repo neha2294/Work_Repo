@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+	<html ng-app="myApp">
+		<title>
+			Book Application
+		</title>
+
+			<head>
+				<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+				<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+				<link rel="stylesheet" href="css/style.css">
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			</head>
+				
+				<body  ng-controller="myCtrl">
+					<div class="container-fluid">
+					<h3>Online Book Store</h3>
+					</div>
+				
+				<header class="container">
+					<a href="#/" ng-hide="getPath()==='/'"><button class="btn btn-primary btn-change col-xs-12 col-sm-1" type="submit"><span class="glyphicon glyphicon-home" aria-hidden="true"><br></span> Home</button></a>
+					<a href="#addBook"><button type="button" class="btn btn-primary col-xs-12 col-sm-2">
+					<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Add New Book
+					</button></a>
+					<a href="#addAuthor"><button type="button" class="btn btn-primary col-xs-12 col-sm-2">
+					<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Add New Author
+					</button></a>
+				</header>
+				
+				<div ng-view>
+				</div>
+		
+				<script src="js/script.js"></script>
+				</body>
+				<footer class="container-fluid">&copy Copyright Cybage</footer>
+	</html>

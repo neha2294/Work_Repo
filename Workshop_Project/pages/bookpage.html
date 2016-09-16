@@ -1,0 +1,60 @@
+<!--Link for external styleshett-->
+<head>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/phone-default.css">
+</head>
+		
+	<!--Start of Form-->
+	<form class="container form-horizontal">
+		<div class="border">
+		
+			<!--Div for Book ISBN-->
+			<div class="form-group">
+				<label class="col-sm-2 control-label">ISBN:</label> 
+				<div class="col-sm-10">
+					<input  class="form-control" ng-model="book.isbn" type="text" name="isbn" ng-disabled="editBookData"/>
+				</div>	
+			</div>	
+		
+			<!--Div for Book Title-->
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Title:</label> 
+				<div class="col-sm-10">
+					<input  class="form-control"  ng-model="book.title" type="text" name="title" ng-disabled="editBookData"/>
+				</div>	
+			</div>
+			
+			<!--Div for Book Author-->
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Author:</label> 
+				<div class="col-sm-10">
+					<input  class="form-control" ng-model="book.author" type="text" name="author" ng-disabled="editBookData"/>
+				</div>	
+			</div>	
+			
+			<!--Div for Book Price-->
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Price:</label> 
+				<div class="col-sm-10">
+					<input  class="form-control" ng-model="book.price" type="text" name="price" ng-disabled="editBookData"/>
+				</div>	
+			</div>		
+			
+			<!--Div for Book Availability-->
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Available On:</label> 
+					<div class="checkbox col-sm-1"><label class="check"><input type="checkbox" value="Amazon" ng-click="toggleSelection('Amazon')"  ng-checked="book.availableOn.indexOf('Amazon') > -1" name="availableOn[]"/>Amazon</label>
+					<label class="check"><input type="checkbox" value="eBay" ng-click="toggleSelection('eBay')" ng-checked="book.availableOn.indexOf('eBay') > -1" name="availableOn[]"/>eBay</label>
+					<label class="check"><input type="checkbox" ng-click="toggleSelection('Flipkart')" value="Flipkart" ng-checked="book.availableOn.indexOf('Flipkart') > -1" name="availableOn[]"/>Flipkart</label>
+					<label class="check"><input  type="checkbox" value="Google" ng-click="toggleSelection('Google')" ng-checked="book.availableOn.indexOf('Google') > -1" name="availableOn[]"/>Google</label>
+					</div>
+			</div>
+			
+			<!--Buttons for edit , update , delete data-->
+			<button class="btn btn-primary btnForSave col-xs-12 col-sm-1" type="submit" ng-click="edit()" ng-show="editBtn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</button>
+			
+			<button class="btn btn-primary btnForSave col-xs-12 col-sm-1" type="submit" ng-click="update(book,availableOn)" ng-show="updateBtn"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Update</button>	
+			
+			<button  class="btn btn-primary btnForDelete col-xs-12 col-sm-1" type="submit" ng-click="deleteData(book.isbn)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Delete</button>
+		</div>
+	</form>
